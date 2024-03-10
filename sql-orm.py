@@ -22,7 +22,7 @@ class Album(base):
     __tablename__ = "album"
     album_id = Column(Integer, primary_key=True)
     title = Column(String)
-    artist_id = Column(Integer, ForeignKey("artist.artist_id"))
+    artist_id = Column(Integer, ForeignKey("Artist.artist_id"))
 
 
 # create a class-based model for the "Track" table
@@ -30,7 +30,7 @@ class Track(base):
     __tablename__ = "track"
     track_id = Column(Integer, primary_key=True)
     name = Column(String)
-    album_id = Column(Integer, ForeignKey("Album.AlbumId"))
+    album_id = Column(Integer, ForeignKey("Album.album_id"))
     media_type_id = Column(Integer, primary_key=False)
     genre_id = Column(Integer, primary_key=False)
     composer = Column(String)
